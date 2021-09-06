@@ -1,0 +1,3 @@
+[submodule "lib/go-pokeapi"]
+	path = lib/go-pokeapi
+	url = git@github.com:Jasha22/go-pokeapi.git
