@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "0.0.1",
+  "description": "This is a pokedex written in hugo.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server --disableFastRender"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasha22/Pokedex.git"
+  },
+  "keywords": [
+    "hugo",
+    "go",
+    "Pokedex"
+  ],
+  "author": "Jasha Chec",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jasha22/Pokedex/issues"
+  },
+  "homepage": "https://github.com/Jasha22/Pokedex#readme"
+}
