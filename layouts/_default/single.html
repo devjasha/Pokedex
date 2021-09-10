@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ $firstType := index .Params.details.types 0 }}
+  <div class="wrapper detail-{{ $firstType.name }}">
+    {{ $homeLink := "/"}}
+    <a href="{{ $homeLink }}"><img src="/images/arrow.png" alt="arrow to go back"></a>
+    <h1 class="wrapper__headline">{{ .Params.name }} #{{ .Params.entry_number }}</h1>
+    <img class="img" src="{{ .Params.details.images.front_default }}" alt="pokemon image">
+    <div class="card">
+      <div class="types">
+        {{ $Types := .Params.details.types }}
+        {{ range $Types }}
+          <p class="types__{{ .name }}">{{ .name }}</p>
+        {{ end }}
+      </div>
+      <div class="text-entry">
+        {{ $firstEntry := index .Params.details.text_entries 0 }}
+        <p>{{ $firstEntry.text }}</p>
+      </div>
+      <div class="info">
+        <div class="links">
+          {{ $firstType := index .Params.details.types 0 }}
+          {{ range $firstType }}
+            <button class="link link__{{ $firstType.name }} is-active " data-for-tab="1" >Stats</button>
+            <button class="link link__{{ $firstType.name }}" data-for-tab="2" >Moves</button>
+            <button class="link link__{{ $firstType.name }}" data-for-tab="3" >Infos</button>
+          {{ end }}
+        </div>
+        <div class="content is-active" data-tab="1">
+          <ul class="stats">
+            {{ range .Params.details.stats }}
+              <li class="stats__item">{{ .name }} {{ .base_stat }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="content" data-tab="2">
+          {{ $moves := .Params.details }}
+          <p>{{ $moves.moves }}</p>
+
+        </div>
+        <div class="content" data-tab="3">
+          {{ range .Params.details.text_entries }}
+            <div class="content__text-box">
+              <p>{{ .text }}</p>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
