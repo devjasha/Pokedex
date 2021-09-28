@@ -166,15 +166,16 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 480px;
-    width: 100%;
+
+    width: 100vw;
     background: white;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 30px 50px 30px;
+    justify-content: flex-end;
+    padding-top: 20px;
 
     .types {
       width: 100%;
@@ -208,26 +209,23 @@ body {
       font-size: 0.9rem;
       line-height: 20px;
       color: rgba($color: #000000, $alpha: 0.5);
+      padding: 0 30px;
     }
 
-
     .info {
-      max-height: 300px;
       width: 100%;
-      overflow-y: auto;
-      border: 20px solid #fff;
       position: relative;
 
       .links {
         width: 100%;
-        position: sticky;
+        position: absolute;
         top: 0;
         left: 0;
         display: flex;
         justify-content: space-between;
         text-align: center;
         background: white;
-        padding: 20px 0;
+        padding: 20px 30px;
 
         .link {
           padding: 5px 15px;
@@ -235,7 +233,7 @@ body {
           color: #fff;
           text-decoration: none;
           font-family: 'Roboto', sans-serif;
-          min-width: 30px;
+          width: 70px;
           border: none;
 
           @each $type, $color in $typeColors {
@@ -243,23 +241,75 @@ body {
               background-color: darken($color, 20%);
             }
           }
-
-
         }
       }
 
+      .content-container {
+        height: 250px;
+        position: relative;
+        margin-top: 70px;
+      }
+
       .content {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        padding: 0 30px 70px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
         .stats {
           list-style: none;
 
           &__item {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: rgba($color: #000000, $alpha: 0.5);
             margin: 8px 0;
+            display: block;
+
+            .progress {
+              width: 100%;
+              height: 50px;
+              padding: 10px 0px;
+
+              &__text {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+              }
+
+              &__bar {
+                margin-top: 10px;
+                height: 6px;
+                width: 100%;
+                background-color: #F8F8F8;
+                border-radius: 20px;
+                overflow: hidden;
+
+                .fill {
+                  height: 6px;
+                  background: black;
+                  border-radius: 20px;
+                  transform: translateX(-100%);
+                  transition: transform 1s ease-out;
+                }
+              }
+            }
           }
         }
 
-        &__text-box {
+        .moves {
+          font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: rgba($color: #000000, $alpha: 0.5);
+            margin: 8px 0;
+        }
+
+        .text-box {
           height: auto;
           width: 100%;
           background: green;
@@ -267,10 +317,15 @@ body {
           border-radius: 15px;
           margin-bottom: 20px;
         }
-      }
 
-      .is-active {
-        display: block;
+        &.is-active {
+          opacity: 1;
+          visibility: visible;
+          .stats__item .progress__bar .fill {
+            transform: translateX(var(--base-stat));
+            transition: transform 1s ease-out;
+          }
+        }
       }
     }
   }
