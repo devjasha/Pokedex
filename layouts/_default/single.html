@@ -36,7 +36,7 @@
                       <p>{{ .base_stat }}</p>
                     </div>
                     <div class="progress__bar">
-                      <div class="fill" style="--base-stat: -{{sub 100 .base_stat}}%"></div>
+                      <div class="fill fill__{{ $firstType.name }}" style="--base-stat: -{{sub 100 .base_stat}}%"></div>
                     </div>
                   </div>
                 </li>
