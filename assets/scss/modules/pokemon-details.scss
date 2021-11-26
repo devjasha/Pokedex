@@ -1,0 +1,172 @@
+.pokemon-details {
+  position: relative;
+  width: 100vw;
+  background: white;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 20vw;
+
+  .stage + & {
+    margin-top: calc(-35px - 20vw);
+  }
+
+  .types {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @each $type, $color in $typeColors {
+      &__#{$type}{
+        background-color: darken($color, 13%);
+      }
+    }
+
+    p {
+      padding: 4px 6px;
+      color: white;
+      border-radius: 20px;
+      margin: 10px 0;
+      font-size: 0.7rem;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      margin: 0 5px;
+      min-width: 50px;
+    }
+  }
+
+  .text-entry {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 20px;
+    color: rgba($color: #000000, $alpha: 0.5);
+    padding: 0 30px;
+  }
+
+  .info {
+    width: 100%;
+    position: relative;
+
+    .links {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      background: white;
+      padding: 20px 30px;
+
+      .link {
+        padding: 5px 15px;
+        border-radius: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        width: 70px;
+        border: none;
+
+        @each $type, $color in $typeColors {
+          &__#{$type}.is-active{
+            background-color: darken($color, 20%);
+          }
+        }
+      }
+    }
+
+    .content-container {
+      height: 250px;
+      position: relative;
+      margin-top: 70px;
+    }
+
+    .content {
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      padding: 0 30px 70px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      .stats {
+        list-style: none;
+
+        &__item {
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          color: rgba($color: #000000, $alpha: 0.5);
+          margin: 8px 0;
+          display: block;
+
+          .progress {
+            width: 100%;
+            height: 50px;
+            padding: 10px 0px;
+
+            &__text {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+            }
+
+            &__bar {
+              margin-top: 10px;
+              height: 6px;
+              width: 100%;
+              background-color: #F8F8F8;
+              border-radius: 20px;
+              overflow: hidden;
+
+              .fill {
+                height: 6px;
+                @each $type, $color in $typeColors {
+                  &__#{$type}.fill{
+                    background-color: darken($color, 20%);
+                  }
+                }
+                border-radius: 20px;
+                transform: translateX(-100%);
+                transition: transform 1s ease-out;
+              }
+            }
+          }
+        }
+      }
+
+      .moves {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: rgba($color: #000000, $alpha: 0.5);
+        margin: 8px 0;
+      }
+
+      .text-box {
+        height: auto;
+        width: 100%;
+        background: green;
+        padding: 10px 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        .stats__item .progress__bar .fill {
+          transform: translateX(var(--base-stat));
+          transition: transform 1s ease-out;
+        }
+      }
+    }
+  }
+}
