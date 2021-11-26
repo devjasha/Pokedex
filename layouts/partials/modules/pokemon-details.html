@@ -1,0 +1,58 @@
+<div class="pokemon-details">
+  <div class="types">
+    {{ $Types := .Params.details.types }}
+    {{ range $Types }}
+      <p class="types__{{ .name }}">{{ .name }}</p>
+    {{ end }}
+  </div>
+  <div class="text-entry">
+    {{ $firstEntry := index .Params.details.text_entries 0 }}
+    <p>{{ $firstEntry.text }}</p>
+  </div>
+  <div class="info">
+    <div class="links">
+      {{ $firstType := index .Params.details.types 0 }}
+      {{ range $firstType }}
+        <button class="link link__{{ $firstType.name }} is-active " data-for-tab="1" >Stats</button>
+        <button class="link link__{{ $firstType.name }}" data-for-tab="2" >Moves</button>
+        <button class="link link__{{ $firstType.name }}" data-for-tab="3" >Infos</button>
+      {{ end }}
+    </div>
+    <div class="content-container">
+      <div class="content" data-tab="1">
+        <ul class="stats">
+          {{ range .Params.details.stats }}
+            <li class="stats__item">
+              <div class="progress">
+                <div class="progress__text">
+                  <p>{{ .name }}:</p>
+                  <p>{{ .base_stat }}</p>
+                </div>
+                <div class="progress__bar">
+                  <div class="fill fill__{{ $firstType.name }}" style="--base-stat: -{{sub 100 .base_stat}}%"></div>
+                </div>
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="content" data-tab="2">
+        <div class="moves">
+          {{ $moves := .Params.details.moves }}
+          <ul class="moves__list">
+            {{ range $moves }}
+              <li class="moves__item">{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="content" data-tab="3">
+        {{ range .Params.details.text_entries }}
+          <div class="text-box">
+            <p>{{ .text }}</p>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
