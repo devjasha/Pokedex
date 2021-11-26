@@ -1,0 +1,9 @@
+.wrapper {
+  height: 100%;
+}
+
+@each $type, $color in $typeColors {
+  .detail-#{$type}{
+    background-color: $color;
+  }
+}

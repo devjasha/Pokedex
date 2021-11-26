@@ -1,0 +1,9 @@
+{{ $homeLink := "/"}}
+{{ $firstType := index .Params.details.types 0 }}
+<div class="stage detail-{{ $firstType.name }}">
+  <div class="stage__header">
+    <a class="stage__back-button" href="{{ $homeLink }}"><img src="/images/arrow.png" alt="arrow to go back"></a>
+    <h1 class="stage__title">{{ .Params.name }} #{{ .Params.entry_number }}</h1>
+  </div>
+  <img class="stage__image" src="{{ .Params.details.images.front_default }}" alt="pokemon image">
+</div>
