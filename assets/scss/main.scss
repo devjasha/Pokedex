@@ -1,31 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap');
+// Import base scss
+@import './base/colors.scss';
 
 * {
   box-sizing: border-box;
 }
-
-$typeColors:(
-  "normal": #A8A77A,
-  "fighting": #C22E28,
-  "flying": #A98FF3,
-  "poison": #A33EA1,
-  "ground": #E2BF65,
-  "rock": #B6A136,
-  "bug": #A6B91A,
-  "ghost": #735797,
-  "steel": #B7B7CE,
-  "fire": #EE8130,
-  "water": #6390F0,
-  "grass": #7AC74C,
-  "electric": #F7D02C,
-  "psychic": #F95587,
-  "ice": #96D9D6,
-  "dragon": #6F35FC,
-  "dark": #705746,
-  "fairy": #D685AD,
-  "unknown": #fff,
-  "shadow": #fff,
-);
 
 h1, h2, p, ul, li {
   margin: 0;
