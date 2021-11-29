@@ -23,24 +23,12 @@ body {
   overflow-x: hidden;
 }
 
-.wrapper-list {
-  padding: 50px 30px;
-  height: 100%;
-  width: 100%;
-
-  .link {
-    text-decoration: none;
-  }
-}
-
 @each $type, $color in $typeColors {
   .detail-#{$type}{
     background-color: $color;
   }
 }
 
-.wrapper {
-  height: 100vh;
-  padding: 50px 30px;
-  overflow: hidden;
+.link {
+  text-decoration: none;
 }

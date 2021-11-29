@@ -1,7 +1,4 @@
 {{ define "main" }}
-{{ $firstType := index .Params.details.types 0 }}
-  <div class="wrapper detail-{{ $firstType.name }}">
-  </div>
   {{ partial "modules/stage.html" . }}
   {{ partial "modules/pokemon-details.html" . }}
 {{ end }}
