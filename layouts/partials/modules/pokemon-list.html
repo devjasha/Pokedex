@@ -1,12 +1,12 @@
 <div class="pokemon-list">
   {{ range (where .Site.Pages "Section" "pokemon") }}
     {{ range sort .Pages ".Params.entry_number" }}
-      {{/*  Permalink for detail page  */}}
+      {{/* Permalink for detail page */}}
       {{ $permalink := .Permalink }}
       {{ with .Params }}
         {{ $firstType := index .details.types 0 }}
-          <a href="{{ $permalink }}" class="link">
-            <div class="pokemon-list__item {{ $firstType.name }}">
+        <a href="{{ $permalink }}" class="link">
+          <div class="pokemon-list__item {{ $firstType.name }}">
             <div class="top">
               <h1 class="top__headline">{{ .name }}</h1>
               <p class="top__entry-number">0{{ .entry_number }}</p>
@@ -15,15 +15,15 @@
             <div class="bottom">
               <div class="type">
                 {{ range .details.types }}
-                  <p class="type__{{ .name }}">{{ .name }}</p>
+                <p class="type__{{ .name }}">{{ .name }}</p>
                 {{ end }}
               </div>
               <img class="img" src="{{ .details.images.front_default }}" alt="pokemon image">
             </div>
-            {{/*  <a href="{{ $permalink }}"> Details </a>  */}}
-            </div>
-          </a>
-        {{ end }}
+            {{/* <a href="{{ $permalink }}"> Details </a> */}}
+          </div>
+        </a>
+      {{ end }}
     {{ end }}
   {{ end }}
 </div>

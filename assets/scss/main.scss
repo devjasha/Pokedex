@@ -1,17 +1,22 @@
 // Import base scss
-@import './base/colors.scss';
-@import './base/fonts.scss';
+@import "./base/colors.scss";
+@import "./base/fonts.scss";
 
 // Import modules
-@import './modules/intro-text.scss';
-@import './modules/pokemon-details.scss';
-@import './modules/pokemon-list.scss';
-@import './modules/stage.scss';
+@import "./modules/intro-text.scss";
+@import "./modules/pokemon-details.scss";
+@import "./modules/pokemon-list.scss";
+@import "./modules/stage.scss";
+
 * {
   box-sizing: border-box;
 }
 
-h1, h2, p, ul, li {
+h1,
+h2,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
@@ -24,7 +29,7 @@ body {
 }
 
 @each $type, $color in $typeColors {
-  .detail-#{$type}{
+  .detail-#{$type} {
     background-color: $color;
   }
 }

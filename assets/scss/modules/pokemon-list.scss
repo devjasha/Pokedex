@@ -13,7 +13,7 @@
     padding: 10px 12px;
 
     @each $type, $color in $typeColors {
-      &.#{$type}{
+      &.#{$type} {
         background-color: $color;
       }
     }
@@ -26,13 +26,13 @@
 
       &__headline {
         font-size: 1rem;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         color: white;
       }
 
       &__entry-number {
         font-size: 1rem;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         color: white;
       }
     }
@@ -45,7 +45,7 @@
 
       .type {
         @each $type, $color in $typeColors {
-          &__#{$type}{
+          &__#{$type} {
             background-color: darken($color, 13%);
           }
         }
@@ -57,7 +57,7 @@
           margin: 10px 0;
           font-size: 0.7rem;
           text-align: center;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
         }
       }
 

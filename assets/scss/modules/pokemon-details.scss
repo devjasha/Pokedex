@@ -21,7 +21,7 @@
     margin-bottom: 40px;
 
     @each $type, $color in $typeColors {
-      &__#{$type}{
+      &__#{$type} {
         background-color: darken($color, 13%);
       }
     }
@@ -33,7 +33,7 @@
       margin: 10px 0;
       font-size: 0.7rem;
       text-align: center;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       margin: 0 5px;
       min-width: 50px;
     }
@@ -42,7 +42,7 @@
   .text-entry {
     text-align: center;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.9rem;
     line-height: 20px;
     color: rgba($color: #000000, $alpha: 0.5);
@@ -69,12 +69,12 @@
         border-radius: 20px;
         color: #fff;
         text-decoration: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         width: 70px;
         border: none;
 
         @each $type, $color in $typeColors {
-          &__#{$type}.is-active{
+          &__#{$type}.is-active {
             background-color: darken($color, 20%);
           }
         }
@@ -123,14 +123,14 @@
               margin-top: 10px;
               height: 6px;
               width: 100%;
-              background-color: #F8F8F8;
+              background-color: #f8f8f8;
               border-radius: 20px;
               overflow: hidden;
 
               .fill {
                 height: 6px;
                 @each $type, $color in $typeColors {
-                  &__#{$type}.fill{
+                  &__#{$type}.fill {
                     background-color: darken($color, 20%);
                   }
                 }
