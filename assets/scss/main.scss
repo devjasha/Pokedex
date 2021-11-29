@@ -2,6 +2,8 @@
 @import './base/colors.scss';
 @import './base/fonts.scss';
 
+// Import modules
+@import './modules/intro-text.scss';
 * {
   box-sizing: border-box;
 }
@@ -22,21 +24,6 @@ body {
   padding: 50px 30px;
   height: 100%;
   width: 100%;
-
-  .text-box {
-    margin-bottom: 50px;
-
-    &__headline {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      font-size: 3.5rem;
-    }
-
-    &__subline {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.4rem;
-    }
-  }
 
   .link {
     text-decoration: none;

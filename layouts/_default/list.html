@@ -1,9 +1,5 @@
 {{ define "main" }}
 <div class="wrapper-list">
-  <div class="text-box">
-    <h1 class="text-box__headline">Pokedex</h1>
-    <h2 class="text-box__subline">Kanto</h2>
-  </div>
   <div class="pokemon__list">
     {{ range (where .Site.Pages "Section" "pokemon") }}
       {{ range sort .Pages ".Params.entry_number" }}
