@@ -1,10 +1,7 @@
 {{ define "main" }}
 {{ $firstType := index .Params.details.types 0 }}
   <div class="wrapper detail-{{ $firstType.name }}">
-    {{ $homeLink := "/"}}
-    <a href="{{ $homeLink }}"><img src="/images/arrow.png" alt="arrow to go back"></a>
-    <h1 class="wrapper__headline">{{ .Params.name }} #{{ .Params.entry_number }}</h1>
-    <img class="img" src="{{ .Params.details.images.front_default }}" alt="pokemon image">
   </div>
+  {{ partial "modules/stage.html" . }}
   {{ partial "modules/pokemon-details.html" . }}
 {{ end }}

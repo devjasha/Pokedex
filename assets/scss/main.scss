@@ -6,6 +6,7 @@
 @import './modules/intro-text.scss';
 @import './modules/pokemon-details.scss';
 @import './modules/pokemon-list.scss';
+@import './modules/stage.scss';
 * {
   box-sizing: border-box;
 }
@@ -42,21 +43,4 @@ body {
   height: 100vh;
   padding: 50px 30px;
   overflow: hidden;
-
-  &__headline {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    color: white;
-  }
-
-  .img {
-    position: absolute;
-    top: 29%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-height: 270px;
-    width: auto;
-    z-index: 1;
-  }
 }
