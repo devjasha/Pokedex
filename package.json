@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "This is a pokedex written in hugo.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "hugo server"
+    "fetch": "cd ./lib/go-pokeapi && npm start -- -dir=../../content/pokemon",
+    "prestart": "npm run fetch",
+    "start": "hugo server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
