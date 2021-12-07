@@ -4,7 +4,6 @@
   "description": "This is a pokedex written in hugo.",
   "scripts": {
     "fetch": "cd ./lib/go-pokeapi && npm start -- -dir=../../content/pokemon",
-    "prestart": "npm run fetch",
     "start": "hugo server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
