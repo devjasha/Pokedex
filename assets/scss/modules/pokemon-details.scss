@@ -153,11 +153,20 @@
       .text-box {
         height: auto;
         width: 100%;
-        background: green;
+        @each $type, $color in $typeColors {
+          &__#{$type}.text-box {
+            background-color: darken($color, 20%);
+          }
+        }
         padding: 10px 20px;
         border-radius: 15px;
         margin-bottom: 20px;
+        color: #fff;
+        font-family: "Montserrat-Regular";
+        font-size: 12px;
       }
+
+
 
       &.is-active {
         opacity: 1;

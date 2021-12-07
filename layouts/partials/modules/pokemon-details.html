@@ -48,7 +48,7 @@
       </div>
       <div class="content" data-tab="3">
         {{ range .Params.details.text_entries }}
-          <div class="text-box">
+          <div class="text-box text-box__{{ $firstType.name }}">
             <p>{{ .text }}</p>
           </div>
         {{ end }}
