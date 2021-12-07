@@ -2,12 +2,12 @@
 
 This is a pokedex written in hugo.
 
-## Getting started
+## You want to be the really best?
 
-Install dependencies:
+To catch'em all:
 
 ```sh
-npm install
+npm run fetch
 ```
 
 Run the server:
