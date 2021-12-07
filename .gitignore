@@ -2,4 +2,5 @@ public
 resources
 node_modules
 .DS_Store
-content
+content/pokemon/*
+!content/pokemon/.gitkeep
