@@ -1,10 +1,4 @@
 <div class="pokemon-details">
-  <div class="types">
-    {{ $Types := .Params.details.types }}
-    {{ range $Types }}
-      <p class="types__{{ .name }}">{{ .name }}</p>
-    {{ end }}
-  </div>
   <div class="text-entry">
     {{ $firstEntry := index .Params.details.text_entries 0 }}
     <p>{{ $firstEntry.text }}</p>
