@@ -1,69 +1,174 @@
 .pokemon-list {
-  padding: 0 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 30px;
+  padding: 0 20px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__item {
-    height: 115px;
-    width: 100%;
+    height: 350px;
+    padding: 10px 25px;
+    width: 300px;
     justify-self: center;
-    margin-bottom: 65px;
+    margin-bottom: 130px;
     border-radius: 20px;
-    padding: 10px 12px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
+    background-color: rgba($color: #161616, $alpha: 1);
 
-    @each $type, $color in $typeColors {
-      &.#{$type} {
-        background-color: $color;
+    .image-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 60px;
+
+      .img {
+        top: -180%;
+        position: absolute;
+        height: 200px;
       }
     }
 
     .top {
-      max-width: 100%;
+      height: 50px;
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 10px;
 
-      &__headline {
-        font-size: 1rem;
-        font-family: "Roboto", sans-serif;
-        color: white;
+      .intro-text {
+        width: 100%;
+        padding: 0;
+
+        .headline {
+          font-size: 1.3rem;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .number {
+          margin-top: 2px;
+          font-size: 1rem;
+          font-family: "Roboto", sans-serif;
+          @each $type, $color in $typeColors {
+            &__#{$type} {
+              color: darken($color, 20%);
+            }
+          }
+        }
       }
 
-      &__entry-number {
-        font-size: 1rem;
-        font-family: "Roboto", sans-serif;
-        color: white;
+      .type {
+        display: flex;
+        height: 45px;
+
+        .type-background {
+          display: flex;
+          align-items: center;
+          height: auto;
+          padding: 6px;
+          border-radius: 25px;
+          margin: 5px 0 0 10px;
+          @each $type, $color in $typeColors {
+            &__#{$type} {
+              background-color: darken($color, 20%);
+            }
+          }
+        }
+
+        @each $type, $symbol in $typeSymbol {
+          &__#{$type} {
+            background-image: $symbol;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 18px;
+            width: 18px;
+          }
+        }
       }
     }
 
     .bottom {
       max-width: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
-      .type {
-        @each $type, $color in $typeColors {
-          &__#{$type} {
-            background-color: darken($color, 13%);
-          }
-        }
-
-        p {
-          padding: 4px 6px;
-          color: white;
-          border-radius: 20px;
-          margin: 10px 0;
-          font-size: 0.7rem;
-          text-align: center;
-          font-family: "Montserrat", sans-serif;
-        }
+      .entry-box {
+        height: 50px;
+        margin: 25px 0;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
       }
 
-      .img {
-        max-height: 70px;
+      .stats {
+        width: 100%;
+        list-style: none;
+
+        &__item {
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          color: rgba($color: #ffffff, $alpha: 1);
+          margin: 8px 0;
+          width: 100%;
+
+          .progress {
+            width: 100%;
+            height: 50px;
+            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__text {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+
+              p {
+                font-family: "Roboto", sans-serif;
+                font-weight: 800;
+              }
+
+              .number {
+                @each $type, $color in $typeColors {
+                  &__#{$type} {
+                    color: darken($color, 20%);
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    margin-top: 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .cta {
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .link {
+        position: absolute;
+        bottom: 0%;
+        padding: 8px 40px;
+        color: white;
+        font-family: "Montserrat-Regular", sans-serif;
+        font-size: 1rem;
+        border-radius: 20px;
+        @each $type, $color in $typeColors {
+          &__#{$type} {
+            background-color: darken($color, 20%);
+          }
+        }
       }
     }
   }
