@@ -1,3 +1,4 @@
 languageCode = 'en'
 title = 'Pokedex'
 disableKinds = [ "taxonomy", "taxonomyTerm" ]
+relativeURLs = true
