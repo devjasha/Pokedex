@@ -30,12 +30,6 @@ body {
   background-color: rgba($color: #161616, $alpha: 1.0);
 }
 
-@each $type, $color in $typeColors {
-  .detail-#{$type} {
-    background-color: $color;
-  }
-}
-
 .link {
   text-decoration: none;
 }
