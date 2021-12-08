@@ -1,5 +1,6 @@
 // Import base scss
 @import "./base/colors.scss";
+@import "./base/types.scss";
 @import "./base/fonts.scss";
 
 // Import modules
@@ -26,6 +27,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  background-color: rgba($color: #161616, $alpha: 1.0);
 }
 
 @each $type, $color in $typeColors {
